@@ -1,6 +1,7 @@
 import './App.css';
 import TransactionSearchPage from './pages/TransactionSearch';
-// import TransactionDetailsPage from './pages/TransactionDetails';
+import TransactionDetailsPage from './pages/TransactionDetails';
+import { LocationState } from './model/location';
 import {
   Switch,
   Route,
@@ -8,16 +9,16 @@ import {
 } from "react-router-dom";
 
 const App = () => {
-  const location = useLocation();
-  // const background = location.state && location.state.background;
+  const location = useLocation<LocationState>();
+  const background = location.state && location.state.background;
 
   return (
     <>
-      <Switch location={location}>
+      <Switch location={background || location}>
         <Route exact path='/' component={TransactionSearchPage} />
       </Switch>
 
-      {/* { background && <Route path='/character/:id' component={TransactionDetailsPage} />} */}
+      { background && <Route path='/transaction/:id' component={TransactionDetailsPage} />}
     </>
   );
 };

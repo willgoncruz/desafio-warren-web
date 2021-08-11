@@ -1,13 +1,12 @@
+import { SearchBarInput } from './style';
 
 interface SearchBarProps {
-    term: string
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
-const SearchBar = (props: SearchBarProps) => {
-    const { term } = props;
+export const SearchBar = (props: SearchBarProps) => {
+    const { onChange } = props;
     return (
-        <div>{term}</div>
+        <SearchBarInput placeholder="Pesquise pelo titulo" onChange={onChange} />
     );
 }
-
-export default SearchBar;
