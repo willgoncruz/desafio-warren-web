@@ -28,3 +28,16 @@ export const AggregatedContainer = styled.div`
 export const Divisor = styled.hr`
     color: #DDDDDD;
 `;
+
+export const TransactionDetailsContainer = styled.div`
+    position: fixed;
+
+    top: 110px;
+    left: 12px;
+    right: 12px;
+    bottom: 16px;
+
+    background: white;
+    border-radius: 16px;
+    padding: 0 56px;
+`;
