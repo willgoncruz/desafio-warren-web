@@ -9,7 +9,7 @@ interface TransactionDetailsResponse {
     data: Transaction
 }
 
-const baseURL = `https://warren-transactions-api.herokuapp.com/api`;
+const baseURL = process.env.REACT_APP_API_URL;
 
 const orderByDate = (transactions: Transaction[]) => {
     return transactions.sort((a, b) => a.date < b.date ? -1 : 1);
