@@ -26,6 +26,7 @@ const TransactionSearchPage = () => {
 
     return (
         <div>
+            <div>{term}</div>
             <LogoContainer />
             <Divisor />
 
