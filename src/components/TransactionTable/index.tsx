@@ -2,6 +2,13 @@ import { Link } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
 import { Transaction } from '../../model/transaction';
 import { LocationState } from '../../model/location';
+import { getTransactionStatusName } from '../../model/status';
+import {
+    TableColumn,
+    AmountColumn,
+    TableHeaderColumn,
+    TransactionTableContainer
+} from './style';
 
 interface TransactionTableProps {
     transactions: Transaction[]
@@ -19,10 +26,10 @@ interface DetailsLinkProps {
 const TableHeader = () => {
     return (
         <tr>
-            <td>Titulo</td>
-            <td>Descricao</td>
-            <td>Status</td>
-            <td>Valor</td>
+            <TableHeaderColumn>Titulo</TableHeaderColumn>
+            <TableHeaderColumn>Descricao</TableHeaderColumn>
+            <TableHeaderColumn>Status</TableHeaderColumn>
+            <TableHeaderColumn>Valor</TableHeaderColumn>
         </tr>
     );
 };
@@ -43,10 +50,16 @@ const TableItem = (props: TransactionItemProps) => {
     const { transaction } = props;
     return (
         <tr>
-            <td><DetailsLink id={transaction.id}>{transaction.title}</DetailsLink></td>
-            <td>{transaction.description}</td>
-            <td>{transaction.status}</td>
-            <td>R$ {transaction.amount}</td>
+            <TableColumn>
+                <DetailsLink id={transaction.id}>{transaction.title}</DetailsLink>
+            </TableColumn>
+            <TableColumn>{transaction.description}</TableColumn>
+            <TableColumn>{getTransactionStatusName(transaction.status)}</TableColumn>
+            <TableColumn>
+                <AmountColumn>
+                    <span>R$</span> <span>{transaction.amount}</span>
+                </AmountColumn>
+            </TableColumn>
         </tr>
     );
 };
@@ -54,13 +67,13 @@ const TableItem = (props: TransactionItemProps) => {
 export const TransactionTable = (props: TransactionTableProps) => {
     const { transactions } = props;
     return (
-        <table>
+        <TransactionTableContainer>
             <thead>
                 <TableHeader />
             </thead>
             <tbody>
                 { transactions.map((t, i) => <TableItem key={i} transaction={t} />) }
             </tbody>
-        </table>
+        </TransactionTableContainer>
     );
 };
