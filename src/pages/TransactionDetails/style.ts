@@ -7,7 +7,7 @@ export const TransactionTitle = styled.h1`
     width: fill-available;
 
     @media(min-width: 1024px) {
-        font-size: 48px;
+        font-size: 42px;
     }
 `;
 

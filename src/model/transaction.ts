@@ -1,3 +1,4 @@
+import { TransactionStatus } from './status';
 
 export interface Transaction {
     id: string,
@@ -6,6 +7,6 @@ export interface Transaction {
     date: string,
     title: string,
     amount: number,
-    status: string, // TODO ENUM ?
+    status: TransactionStatus,
     description: string,
 }
