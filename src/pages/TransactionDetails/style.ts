@@ -5,18 +5,30 @@ export const TransactionTitle = styled.h1`
     text-align: center;
     font-weight: bold;
     width: fill-available;
+
+    @media(min-width: 1024px) {
+        font-size: 48px;
+    }
 `;
 
 export const TransactionSubtitle = styled.h2`
-    font-size: 24px;
+    font-size: 20px;
     font-weight: normal;
-    width: fill-available;
     margin-bottom: 0px;
+    width: fill-available;
+
+    @media(min-width: 1024px) {
+        font-size: 24px;
+    }
 `;
 
 export const TransactionText = styled.div`
-    font-size: 16px;
+    font-size: 14px;
     width: fill-available;
+
+    @media(min-width: 1024px) {
+        font-size: 16px;
+    }
 `;
 
 export const AggregatedContainer = styled.div`
@@ -25,19 +37,24 @@ export const AggregatedContainer = styled.div`
     justify-content: space-around;
 `;
 
-export const Divisor = styled.hr`
-    color: #DDDDDD;
-`;
-
 export const TransactionDetailsContainer = styled.div`
     position: fixed;
 
-    top: 110px;
+    top: 60px;
     left: 12px;
     right: 12px;
     bottom: 16px;
 
+    padding: 0 56px;
     background: white;
     border-radius: 16px;
-    padding: 0 56px;
+
+    @media(min-width: 1024px) {
+        top: 20%;
+        left: 20%;
+        right: 20%;
+        bottom: 20%;
+
+        padding: 0 80px;
+    }
 `;

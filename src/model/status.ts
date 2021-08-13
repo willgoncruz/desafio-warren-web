@@ -2,7 +2,7 @@
 enum TransactionStatus {
     created = "Solicitada" as any,
     processing = "Processando" as any,
-    processed = "Concluida" as any,
+    processed = "Concluída" as any,
     empty = "" as any
 }
 

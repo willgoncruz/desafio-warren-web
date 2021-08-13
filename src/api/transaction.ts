@@ -11,9 +11,14 @@ interface TransactionDetailsResponse {
 
 const baseURL = `https://warren-transactions-api.herokuapp.com/api`;
 
+const orderByDate = (transactions: Transaction[]) => {
+    return transactions.sort((a, b) => a.date < b.date ? -1 : 1);
+};
+
 export const getTransactionList = () => new Promise<Transaction[]>((resolve, reject) => {
     axios.get(`${baseURL}/transactions`).then((response: TransactionListResponse) => {
-        resolve(response.data);
+        const transactions = response.data;
+        resolve(orderByDate(transactions));
     }).catch(() => {
         reject([])
     });

@@ -26,10 +26,11 @@ interface DetailsLinkProps {
 const TableHeader = () => {
     return (
         <tr>
-            <TableHeaderColumn>Titulo</TableHeaderColumn>
-            <TableHeaderColumn>Descricao</TableHeaderColumn>
+            <TableHeaderColumn>Título</TableHeaderColumn>
+            <TableHeaderColumn>Descrição</TableHeaderColumn>
             <TableHeaderColumn>Status</TableHeaderColumn>
             <TableHeaderColumn>Valor</TableHeaderColumn>
+            <TableHeaderColumn>Data</TableHeaderColumn>
         </tr>
     );
 };
@@ -59,6 +60,9 @@ const TableItem = (props: TransactionItemProps) => {
                 <AmountColumn>
                     <span>R$</span> <span>{transaction.amount}</span>
                 </AmountColumn>
+            </TableColumn>
+            <TableColumn>
+                {transaction.date}
             </TableColumn>
         </tr>
     );

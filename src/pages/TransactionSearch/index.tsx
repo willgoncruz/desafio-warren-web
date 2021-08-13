@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
+import { Divisor } from '../../components/Divisor';
 import { SearchBar } from '../../components/SearchBar';
 import { Transaction } from '../../model/transaction';
 import { getTransactionList } from '../../api/transaction';
 import { TransactionTable } from '../../components/TransactionTable';
 
-
-import { Divisor } from '../../components/Divisor';
 import {
     LogoContainer,
     TransactionSearchContainer
