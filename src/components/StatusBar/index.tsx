@@ -17,7 +17,7 @@ export const StatusBar = (props: StatusBarProps) => {
     const progress = 50 * (statuses.indexOf(getTransactionStatusName(status)));
     return (
         <StatusBarContainer>
-            <StatusBarProgression type="range" value={progress} min={0} max={100} />
+            <StatusBarProgression type="range" value={progress} min={0} max={100} readOnly />
 
             <StatusList>
                 {statuses.map((s, i) =>
