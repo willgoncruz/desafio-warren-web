@@ -41,7 +41,7 @@ const DetailsLink = (props: DetailsLinkProps) => {
     const pathname = `/transaction/${id}`;
 
     return (
-        <Link to={{ pathname, state: { background: location } }}>
+        <Link data-id={id} to={{ pathname, state: { background: location } }}>
             {children}
         </Link>
     );
