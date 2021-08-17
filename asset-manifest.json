@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/desafio-warren-web/static/css/main.a617e044.chunk.css",
-    "main.js": "/desafio-warren-web/static/js/main.28136c4d.chunk.js",
-    "main.js.map": "/desafio-warren-web/static/js/main.28136c4d.chunk.js.map",
+    "main.js": "/desafio-warren-web/static/js/main.71d727ff.chunk.js",
+    "main.js.map": "/desafio-warren-web/static/js/main.71d727ff.chunk.js.map",
     "runtime-main.js": "/desafio-warren-web/static/js/runtime-main.09bbd6a2.js",
     "runtime-main.js.map": "/desafio-warren-web/static/js/runtime-main.09bbd6a2.js.map",
     "static/js/2.f983e01a.chunk.js": "/desafio-warren-web/static/js/2.f983e01a.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.09bbd6a2.js",
     "static/js/2.f983e01a.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.28136c4d.chunk.js"
+    "static/js/main.71d727ff.chunk.js"
   ]
 }
