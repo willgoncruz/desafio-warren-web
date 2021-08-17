@@ -7,6 +7,7 @@ import { getTransactionDetails } from '../../api/transaction';
 
 import { Divisor } from '../../components/Divisor';
 import {
+    CloseDetails,
     TransactionText,
     TransactionTitle,
     TransactionSubtitle,
@@ -43,6 +44,10 @@ const TransactionDetailsPage = () => {
         }
     }, [downHandler]);
 
+    const closeModal = () => {
+        history.goBack();
+    };
+
     if (!transaction) {
         // TODO how to handle this
         return (<div>NULO</div>);
@@ -52,6 +57,8 @@ const TransactionDetailsPage = () => {
     return (
         <ModalContainer>
             <TransactionDetailsContainer>
+                <CloseDetails onClick={closeModal}>X</CloseDetails>
+
                 <TransactionTitle>{title}</TransactionTitle>
 
                 <StatusBar status={status} />

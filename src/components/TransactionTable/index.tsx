@@ -4,6 +4,7 @@ import { Transaction } from '../../model/transaction';
 import { LocationState } from '../../model/location';
 import { getTransactionStatusName } from '../../model/status';
 import {
+    TableRow,
     TableColumn,
     AmountColumn,
     TableHeaderColumn,
@@ -25,13 +26,13 @@ interface DetailsLinkProps {
 
 const TableHeader = () => {
     return (
-        <tr>
+        <TableRow>
             <TableHeaderColumn>Título</TableHeaderColumn>
             <TableHeaderColumn>Descrição</TableHeaderColumn>
             <TableHeaderColumn>Status</TableHeaderColumn>
             <TableHeaderColumn>Valor</TableHeaderColumn>
             <TableHeaderColumn>Data</TableHeaderColumn>
-        </tr>
+        </TableRow>
     );
 };
 
@@ -50,7 +51,7 @@ const DetailsLink = (props: DetailsLinkProps) => {
 const TableItem = (props: TransactionItemProps) => {
     const { transaction } = props;
     return (
-        <tr>
+        <TableRow>
             <TableColumn>
                 <DetailsLink id={transaction.id}>{transaction.title}</DetailsLink>
             </TableColumn>
@@ -64,7 +65,7 @@ const TableItem = (props: TransactionItemProps) => {
             <TableColumn>
                 {transaction.date}
             </TableColumn>
-        </tr>
+        </TableRow>
     );
 };
 

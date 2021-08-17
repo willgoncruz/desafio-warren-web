@@ -1,8 +1,17 @@
 import styled from "styled-components";
 
+export const TableRow = styled.tr`
+    &:nth-child(2n) {
+        background-color: #DEDEDE;
+        border-color: #DEDEDE;
+    }
+`;
+
 export const TransactionTableContainer = styled.table`
-    border: 1px solid #ECECEC;
     margin: 32px;
+    border: 1px solid #ECECEC;
+    border-spacing: 0;
+    border-collapse: collapse;
 `;
 
 export const TableColumn = styled.td`
@@ -11,7 +20,7 @@ export const TableColumn = styled.td`
 
     @media(min-width: 1024px) {
         font-size: 16px;
-        padding: 3px 10px;
+        padding: 8px 16px;
     }
 `;
 

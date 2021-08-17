@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+export const CloseDetails = styled.button`
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    background: transparent;
+    border: 1px black solid;
+    border-radius: 45%;
+`;
+
 export const TransactionTitle = styled.h1`
     font-size: 32px;
     text-align: center;
