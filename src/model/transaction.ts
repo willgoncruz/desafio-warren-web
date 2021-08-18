@@ -10,3 +10,14 @@ export interface Transaction {
     status: TransactionStatus,
     description: string,
 }
+
+export const EMPTY_TRANSACTION: Transaction = {
+    id: "",
+    to: "",
+    from: "",
+    date: "",
+    title: "Transação não encontrada ;-;",
+    amount: 0,
+    status: TransactionStatus.empty,
+    description: "",
+}

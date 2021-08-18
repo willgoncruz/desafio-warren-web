@@ -1,11 +1,12 @@
-import { useEffect, useState, useCallback } from 'react';
+import { Fragment, useEffect, useState, useCallback } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { StatusBar } from '../../components/StatusBar';
-import { Transaction } from '../../model/transaction';
+import { Transaction, EMPTY_TRANSACTION } from '../../model/transaction';
 import { ModalContainer } from '../../components/ModalContainer';
 import { getTransactionDetails } from '../../api/transaction';
 
 import { Divisor } from '../../components/Divisor';
+import { Loading } from '../../components/Loading';
 import {
     CloseDetails,
     TransactionText,
@@ -22,11 +23,15 @@ interface TransactionDetailsProps {
 const TransactionDetailsPage = () => {
     const history = useHistory();
     const { id } = useParams<TransactionDetailsProps>();
-    const [ transaction, setTransaction ] = useState<Transaction | null>(null);
+
+    const [ loading, setLoading ] = useState<Boolean>(true);
+    const [ transaction, setTransaction ] = useState<Transaction>(EMPTY_TRANSACTION);
 
     useEffect(() => {
         getTransactionDetails(id).then((response: Transaction) => {
             setTransaction(response);
+        }).finally(() => {
+            setLoading(false);
         });
     }, [id]);
 
@@ -48,36 +53,36 @@ const TransactionDetailsPage = () => {
         history.goBack();
     };
 
-    if (!transaction) {
-        // TODO how to handle this
-        return (<div>NULO</div>);
-    }
-
     const { title, status, amount, from, to } = transaction;
     return (
         <ModalContainer>
             <TransactionDetailsContainer>
+                { loading && <Loading /> }
                 <CloseDetails onClick={closeModal}>X</CloseDetails>
 
-                <TransactionTitle>{title}</TransactionTitle>
+                { !loading &&
+                    <Fragment>
+                        <TransactionTitle>{title}</TransactionTitle>
 
-                <StatusBar status={status} />
+                        <StatusBar status={status} />
 
-                <TransactionSubtitle>Valor</TransactionSubtitle>
-                <Divisor />
+                        <TransactionSubtitle>Valor</TransactionSubtitle>
+                        <Divisor />
 
-                <TransactionText>R$ {amount}</TransactionText>
+                        <TransactionText>R$ {amount}</TransactionText>
 
-                <AggregatedContainer>
-                    <TransactionSubtitle>Transferido de</TransactionSubtitle>
-                    <TransactionSubtitle>Para</TransactionSubtitle>
-                </AggregatedContainer>
-                <Divisor />
+                        <AggregatedContainer>
+                            <TransactionSubtitle>Transferido de</TransactionSubtitle>
+                            <TransactionSubtitle>Para</TransactionSubtitle>
+                        </AggregatedContainer>
+                        <Divisor />
 
-                <AggregatedContainer>
-                    <TransactionText>{from}</TransactionText>
-                    <TransactionText>{to}</TransactionText>
-                </AggregatedContainer>
+                        <AggregatedContainer>
+                            <TransactionText>{from}</TransactionText>
+                            <TransactionText>{to}</TransactionText>
+                        </AggregatedContainer>
+                    </Fragment>
+                }
             </TransactionDetailsContainer>
         </ModalContainer>
     );

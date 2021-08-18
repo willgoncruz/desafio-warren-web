@@ -4,6 +4,7 @@ import { SearchBar } from '../../components/SearchBar';
 import { Transaction } from '../../model/transaction';
 import { getTransactionList } from '../../api/transaction';
 import { TransactionTable } from '../../components/TransactionTable';
+import { Loading } from '../../components/Loading';
 
 import {
     LogoContainer,
@@ -11,6 +12,7 @@ import {
 } from './style';
 
 const TransactionSearchPage = () => {
+    const [ loading, setLoading ] = useState<Boolean>(true);
     const [ term, setTerm ] = useState<string>("");
     const [ transactions, setTransactions ] = useState<Transaction[]>([]);
 
@@ -21,6 +23,8 @@ const TransactionSearchPage = () => {
     useEffect(() => {
         getTransactionList().then((response: Transaction[]) => {
             setTransactions(response);
+        }).finally(() => {
+            setLoading(false);
         });
     }, []);
 
@@ -33,6 +37,8 @@ const TransactionSearchPage = () => {
             <TransactionSearchContainer>
                 <SearchBar onChange={onChange}/>
                 <TransactionTable transactions={transactions} />
+
+                { loading && <Loading /> }
             </TransactionSearchContainer>
         </div>
     );
