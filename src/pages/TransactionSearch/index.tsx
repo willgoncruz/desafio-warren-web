@@ -31,7 +31,7 @@ const TransactionSearchPage = () => {
     return (
         <div>
             <div>{term}</div>
-            <LogoContainer />
+            <LogoContainer src={`${process.env.PUBLIC_URL }/logo512.png`} alt='logo' />
             <Divisor />
 
             <TransactionSearchContainer>

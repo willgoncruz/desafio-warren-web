@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-export const LogoContainer = styled.div`
+export const LogoContainer = styled.img`
     height: 80px;
+    margin-left: 56px;
 `;
 
 export const TransactionSearchContainer = styled.div`

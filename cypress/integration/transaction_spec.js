@@ -1,11 +1,13 @@
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = 'https://willgoncruz.github.io/desafio-warren-web/';
 
 describe('Visiting the transaction', () => {
-    it('Go to details of created transaction', () => {
-        const id = '5f89f9f20caef3ce2156509b';
+    beforeEach(() => {
         cy.visit(BASE_URL);
         cy.wait(3000);
+    });
 
+    it('Go to details of created transaction', () => {
+        const id = '5f89f9f20caef3ce2156509b';
         const link = cy.get(`[data-id=${id}]`);
         link.should('have.length', 1);
         link.click();
@@ -21,9 +23,6 @@ describe('Visiting the transaction', () => {
 
     it('Go to details of processed transaction', () => {
         const id = '5f89f9f2b882c64b35295937';
-        cy.visit(BASE_URL);
-        cy.wait(3000);
-
         const link = cy.get(`[data-id=${id}]`);
         link.should('have.length', 1);
         link.click();
