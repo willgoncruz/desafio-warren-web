@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/desafio-warren-web/static/css/main.a617e044.chunk.css",
-    "main.js": "/desafio-warren-web/static/js/main.9048d579.chunk.js",
-    "main.js.map": "/desafio-warren-web/static/js/main.9048d579.chunk.js.map",
-    "runtime-main.js": "/desafio-warren-web/static/js/runtime-main.09bbd6a2.js",
-    "runtime-main.js.map": "/desafio-warren-web/static/js/runtime-main.09bbd6a2.js.map",
-    "static/js/2.31d449de.chunk.js": "/desafio-warren-web/static/js/2.31d449de.chunk.js",
-    "static/js/2.31d449de.chunk.js.map": "/desafio-warren-web/static/js/2.31d449de.chunk.js.map",
-    "static/js/3.8a7e4872.chunk.js": "/desafio-warren-web/static/js/3.8a7e4872.chunk.js",
-    "static/js/3.8a7e4872.chunk.js.map": "/desafio-warren-web/static/js/3.8a7e4872.chunk.js.map",
+    "main.css": "/desafio-warren-web/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/desafio-warren-web/static/js/main.3f1d7a7d.chunk.js",
+    "main.js.map": "/desafio-warren-web/static/js/main.3f1d7a7d.chunk.js.map",
+    "runtime-main.js": "/desafio-warren-web/static/js/runtime-main.5d375a09.js",
+    "runtime-main.js.map": "/desafio-warren-web/static/js/runtime-main.5d375a09.js.map",
+    "static/js/2.4b9709ce.chunk.js": "/desafio-warren-web/static/js/2.4b9709ce.chunk.js",
+    "static/js/2.4b9709ce.chunk.js.map": "/desafio-warren-web/static/js/2.4b9709ce.chunk.js.map",
+    "static/js/3.af6362ef.chunk.js": "/desafio-warren-web/static/js/3.af6362ef.chunk.js",
+    "static/js/3.af6362ef.chunk.js.map": "/desafio-warren-web/static/js/3.af6362ef.chunk.js.map",
     "index.html": "/desafio-warren-web/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/desafio-warren-web/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.31d449de.chunk.js.LICENSE.txt": "/desafio-warren-web/static/js/2.31d449de.chunk.js.LICENSE.txt"
+    "static/css/main.6dea0f05.chunk.css.map": "/desafio-warren-web/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.4b9709ce.chunk.js.LICENSE.txt": "/desafio-warren-web/static/js/2.4b9709ce.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.09bbd6a2.js",
-    "static/js/2.31d449de.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.9048d579.chunk.js"
+    "static/js/runtime-main.5d375a09.js",
+    "static/js/2.4b9709ce.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.3f1d7a7d.chunk.js"
   ]
 }
