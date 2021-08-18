@@ -10,3 +10,6 @@ build:
 
 test:
 	npm run test
+
+screen-test:
+	npm run cypress
