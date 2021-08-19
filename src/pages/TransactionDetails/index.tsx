@@ -49,7 +49,7 @@ const TransactionDetailsPage = () => {
         }
     }, [downHandler]);
 
-    const closeModal = () => {
+    const closeModalContainer = () => {
         history.goBack();
     };
 
@@ -58,7 +58,7 @@ const TransactionDetailsPage = () => {
         <ModalContainer>
             <TransactionDetailsContainer>
                 { loading && <Loading /> }
-                <CloseDetails onClick={closeModal}>X</CloseDetails>
+                <CloseDetails onClick={closeModalContainer}>X</CloseDetails>
 
                 { !loading &&
                     <Fragment>
