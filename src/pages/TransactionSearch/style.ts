@@ -5,6 +5,12 @@ export const LogoContainer = styled.img`
     margin-left: 56px;
 `;
 
+export const FilterContainer = styled.div`
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+`;
+
 export const TransactionSearchContainer = styled.div`
     width: 80%;
     margin: auto;
