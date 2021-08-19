@@ -30,7 +30,7 @@ describe('Visiting the transaction', () => {
         cy.url().should('include', `/transaction/${id}`);
 
         cy.get('h1').contains('Resgate');
-        cy.get('input[type=range]').should('have.value', 100);
+        cy.get('input[type=range]').should('have.value', 2);
 
         const value = cy.get('h2:first').next().next();
         value.contains('4839.17');

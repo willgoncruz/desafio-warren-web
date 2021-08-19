@@ -14,10 +14,10 @@ interface StatusBarProps {
 export const StatusBar = (props: StatusBarProps) => {
     const { status } = props;
     const statuses = getStatusListOfValues();
-    const progress = 50 * (statuses.indexOf(getTransactionStatusName(status)));
+    const progress = (statuses.indexOf(getTransactionStatusName(status)));
     return (
         <StatusBarContainer>
-            <StatusBarProgression type="range" value={progress} min={0} max={100} readOnly />
+            <StatusBarProgression type="range" value={progress} min={0} max={2} readOnly />
 
             <StatusList>
                 {statuses.map((s, i) =>

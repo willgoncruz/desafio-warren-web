@@ -14,13 +14,13 @@ describe('Status Bar Component test', () => {
     it('Render at middle position', () => {
         const status = getTransactionStatusName(TransactionStatus.processing);
         render(<StatusBar status={status} />);
-        expect(screen.getByRole('slider')).toHaveValue('50');
+        expect(screen.getByRole('slider')).toHaveValue('1');
     });
 
     it('Render at final position', () => {
         const status = getTransactionStatusName(TransactionStatus.processed);
         render(<StatusBar status={status} />);
-        expect(screen.getByRole('slider')).toHaveValue('100');
+        expect(screen.getByRole('slider')).toHaveValue('2');
     });
 
     it('Render all status values', () => {
