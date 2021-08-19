@@ -35,4 +35,26 @@ describe('Visiting the transaction', () => {
         const value = cy.get('h2:first').next().next();
         value.contains('4839.17');
     });
+
+    it('Filter by transaction title', () => {
+        cy.get('input').type('Dep');
+        cy.wait(1);
+
+        cy.get('tbody > tr').should('have.length', 3);
+    });
+
+    it('Filter by transaction status', () => {
+        cy.get('select').select("created");
+        cy.wait(1);
+
+        cy.get('tbody > tr').should('have.length', 7);
+    });
+
+    it('Filter by both transaction title and status', () => {
+        cy.get('input').type('Dep')
+        cy.get('select').select("created");
+        cy.wait(1);
+
+        cy.get('tbody > tr').should('have.length', 1);
+    });
 });
