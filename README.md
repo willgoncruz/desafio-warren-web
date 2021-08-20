@@ -21,7 +21,7 @@ Execute o comando abaixo para visualizar os testes unitários.
 
 ```make test```
 
-## Testes unitários
+## Testes de tela
 Foi utilizada a ferramenta `cypress` para criação dos testes de tela.
 Para executá-los, aplique o comando abaixo.
 
