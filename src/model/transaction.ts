@@ -1,5 +1,8 @@
 import { TransactionStatus } from './status';
 
+/**
+ * Modelo de Transação utilizado pelo sistema
+ */
 export interface Transaction {
     id: string,
     to: string,
@@ -11,6 +14,9 @@ export interface Transaction {
     description: string,
 }
 
+/**
+ * Definição de uma transação vazia para uso em casos de erro ou não encontrada
+ */
 export const EMPTY_TRANSACTION: Transaction = {
     id: "",
     to: "",

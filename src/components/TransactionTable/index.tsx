@@ -48,6 +48,11 @@ const DetailsLink = (props: DetailsLinkProps) => {
     );
 };
 
+/**
+ * TableItem,TableHeader e DetailsLink não possuem seus próprios componentes separados pois sua existência
+ * é totalmente dependente e vinculada a TransactionTable, não fazendo sentido serem separados do mesmo.
+ * Além disso, evita a importação e o uso errado desses componentes sem adaptação necessária.
+ */
 const TableItem = (props: TransactionItemProps) => {
     const { transaction } = props;
     return (

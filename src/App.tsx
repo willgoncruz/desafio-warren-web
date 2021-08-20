@@ -11,6 +11,11 @@ const App = () => {
     const location = useLocation<LocationState>();
     const background = location.state && location.state.background;
 
+    /**
+     * Nessa configuração do React Router, temos apenas uma rota dentro do switch que sempre aparecerá (Search page)
+     * Para controlar a visualização do modal de detalhes, é usada a variável 'background'
+     *      Essa variável controla a localização da página, e exibe ao fundo (background) a última página que chamou o modal
+     */
     return (
         <>
             <Switch location={background || location}>

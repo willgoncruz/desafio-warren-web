@@ -16,6 +16,7 @@ const orderByDate = (transactions: Transaction[]) => {
     return transactions.sort((a, b) => a.date < b.date ? -1 : 1);
 };
 
+// Esse método filtra os resultados das transações de acordo com o título e status recebidos
 export const filter = (transactions: Transaction[], term: string, status: TransactionStatus) => {
     if (term) {
         term = term.toLowerCase();
@@ -29,6 +30,9 @@ export const filter = (transactions: Transaction[], term: string, status: Transa
     return transactions;
 }
 
+/**
+ * Abaixos estão os métodos de request para as APIs
+ */
 export const getTransactionList = () => new Promise<Transaction[]>((resolve, reject) => {
     axios.get(`${baseURL}/transactions`).then((response: TransactionListResponse) => {
         const transactions = response.data;

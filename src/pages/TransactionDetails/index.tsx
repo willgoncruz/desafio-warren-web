@@ -35,6 +35,7 @@ const TransactionDetailsPage = () => {
         });
     }, [id]);
 
+    // Handler dos eventos do teclado, ao clicar Esc ou Backspace, ocorre a saída da página atual
     const downHandler = useCallback((e) => {
         if (e.key === "Backspace" || e.key === "Escape") {
             e.stopPropagation();
@@ -42,6 +43,7 @@ const TransactionDetailsPage = () => {
         }
     }, [history]);
 
+    // Esse hook é encarregado de escutar os eventos do teclado a serem tratatos pelá página
     useEffect(() => {
         window.addEventListener("keydown", downHandler);
         return () => {

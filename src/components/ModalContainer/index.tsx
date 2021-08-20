@@ -33,6 +33,11 @@ interface ModalProps {
     children: React.ReactNode
 }
 
+/**
+ * ModalContainer expõe um componente de modal reutilizável, que se encarrega de posicionar e estilizar o fundo do modal.
+ * Além disso, ele imbute a funcionalidade de focus trap, para que as interações com o teclado (Tab, scroll) ocorram
+ *      apenas dentro do modal quando ele estiver ativo.
+ */
 export const ModalContainer = (props: ModalProps) => {
     return (
         <Modal>

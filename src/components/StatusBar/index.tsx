@@ -11,6 +11,10 @@ interface StatusBarProps {
     status: TransactionStatus
 }
 
+/**
+ * StatusBar é o componente responsável por mostrar o progresso do status da transação.
+ * Foi utilizado um input type=range para melhor visualização e controle sobre essa funcionalidade.
+ */
 export const StatusBar = (props: StatusBarProps) => {
     const { status } = props;
     const statuses = getStatusListOfValues();

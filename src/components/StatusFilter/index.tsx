@@ -7,6 +7,9 @@ interface StatusFilterProps {
     onChange: (status: TransactionStatus) => void
 }
 
+/**
+ * StatusFilter é responsável pelo filtro de status, se utiliza de um select option para melhor funcionalidade
+ */
 export const StatusFilter = (props: StatusFilterProps) => {
     const { selected, onChange } = props;
 
